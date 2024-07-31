@@ -1,0 +1,579 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #000000;
+    color: #070707;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/*header*/
+
+.navbar{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./image/Mayur2-bg-img4.png);
+    background-size:cover;
+    background-position:inherit;
+   
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 10px;
+    padding-left: 8%;
+    padding-right: 8%;
+    position: fixed;
+    z-index: 1;
+    background-color: #171717;
+}
+.logo {
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+span{
+    font-size: 40px;
+    color: rgb(219, 184, 42);
+    text-shadow: 1px 1px 1px #000000;
+}
+
+nav ul li  {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+nav ul li a {
+    color: rgb(255, 253, 253);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    overflow-x: scroll;
+}
+nav ul li a:hover {
+    color:rgb(219, 184, 42);
+    transition: .4s;
+}
+.git-btn {
+    background-color: rgb(219, 184, 42);
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 1px 8px;
+    transition: .4;
+}
+.git-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 2px 5px rgb(136, 136, 136);   
+}
+
+nav .toggle-btn {
+    color: white;
+    display: none;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Dropdown Menu*/
+
+ .dropdown-menu {
+    
+    height: 0;
+    position:fixed;
+    right: 12%;
+    top: 10%;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    display: none;  
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+    height: 250px;
+}
+.dropdown-menu ul li a {
+    color: rgb(255, 253, 253);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.dropdown-menu li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown-menu ul li a:hover {
+    color:rgb(219, 184, 42);
+    transition: .4s;
+}
+.dropdown-menu .git-btn {
+    color: #000000;
+    margin-top: 20px;
+}
+.dropdown-menu .git-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 2px 5px rgb(69, 69, 69); 
+    color: #000000;  
+}
+
+
+/* responsive navbar*/
+
+@media(max-width:120vh) {
+    nav ul,
+    nav .git-btn {
+        display: none;
+    }
+
+    nav .toggle-btn {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu .git-btn {
+        padding-right: 1vh;
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width:65vh) {
+    .dropdown-menu {
+        left: 1rem;
+        width: unset;
+    }
+    .dropdown-menu .git-btn {
+        padding-right: 1vh;
+        font-size: 15px;
+    }
+}
+
+
+/*Content*/
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform:translateY(-50%);
+
+}
+h1 {
+    margin: 20px 0 20px;
+    font-size: 65px;
+}
+h3 {
+    font-size:25px;
+    margin-bottom: 50px;
+}
+h4 {
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.content .download-btn a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    border: 2px solid rgb(219, 184, 42);
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+}
+.content .download-btn a:hover {
+    background-color: rgb(219, 184, 42);
+    border: 2px solid rgb(219, 184, 42);
+    cursor: pointer;
+}
+
+
+/*About*/
+
+.about {
+    width: 100%;
+    padding: 100px 0px;
+    background-color:#191919;
+}
+
+.about img {
+    height: auto;
+    width: 400px;
+/*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 50%;
+}
+.about-txt {
+    display:block;
+    width:50%;
+/*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 50%;
+}
+.main {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.about-txt h2 {
+    color: white;
+    font-size: 65px;
+    text-transform: capitalize;
+}
+
+.about-txt h4 {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    max-width: 50%;
+}
+.about-txt p{
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 25px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+button {
+    background-color: rgb(219, 184, 42);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+
+}
+button:hover {
+    background-color: transparent;
+    border: 2px solid rgb(219, 184, 42);
+    cursor: pointer;
+}
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+@media(max-width:80vh) {
+    .main {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+
+
+/*Services*/
+
+.services {
+    background: #101010;
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.title h2{
+    color: white;
+    font-size: 65px;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 80%;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-flow:wrap;
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 50%;
+}
+
+.card {
+    width: 360px;
+    height: 450px;
+    padding: 20px 35px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+}
+
+.card i {
+    
+    color: rgb(219, 184, 42);
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+}
+.card h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.para p {
+    color: white;
+    font-size: 12px;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.card .btn {
+    background-color: rgb(219, 184, 42);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 7px 20px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+.card .btn:hover {
+    background-color: transparent;
+    border: 2px solid rgb(219, 184, 42);
+    cursor: pointer;
+}
+
+/*Skills*/
+
+.skills {
+    background: #101010;
+    width: 100%;
+    padding: 100px 0px;
+}
+.skills-title h2{
+    color: white;
+    font-size: 65px;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+
+    /*animation*/
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 5% cover 40%;
+    
+}
+.box-a {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+
+    /*animation*/
+    animation:appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 40%;
+}
+
+.card-a {
+    width: 340px;
+    height: 450px;
+    padding: 20px 35px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow:hidden;
+    transition: .4s;
+}
+
+.card-a i {
+    
+    color: rgb(219, 184, 42);
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+}
+.card-a h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    display: block;
+}
+.para-a ul {
+    color: white;
+    font-size: 12px;
+    line-height: 25px;
+    margin-bottom: 25px;
+    display: block;
+    
+}
+.card-a:hover {
+    border:2px solid rgb(219, 184, 42);
+    box-shadow: 0px 10px 5px rgb(219, 184, 42);
+    cursor: pointer;
+}
+
+
+/*Contact*/
+
+.contact {
+    width: 100%;
+    height:380px;
+    background: #191919;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 350px auto;
+}
+
+.contact p {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 40%;
+}
+.contact .btn-II {
+    background-color: rgb(219, 184, 42);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: .4s;
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 35%;
+}
+.contact .btn-II:hover {
+    background-color: transparent;
+    border: 2px solid rgb(219, 184, 42);
+    cursor: pointer;
+}
+
+/*Footer*/
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+footer p:nth-child(1) {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 20%;
+}
+
+footer p:nth-child(2) {
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: center;
+     /*animation*/
+     animation: appear alternate;
+     animation-timeline: view();
+     animation-range: entry 5% cover 10%;
+}
+
+    
+/*Social*/
+
+.social {
+    display: flex;
+
+    /*animation*/
+    animation: appear alternate;
+    animation-timeline: view();
+    animation-range: entry 5% cover 20%;
+}
+
+.social a {
+    width:45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    color: rgb(50, 50, 50);
+    background: rgb(219, 184, 42);
+    border-radius: 50%;
+    margin: 20px 10px;
+    text-decoration: none;
+    align-items: center;
+    font-size: 22px;
+}
+.social a:hover {
+    transform:scale(1.2);
+    transition: .4s;
+}
+.copy {
+    position: absolute;
+    color: rgb(219, 184, 42);
+    bottom: 35px;
+    font-size: 12px;
+}
+
